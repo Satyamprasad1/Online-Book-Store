@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Bookstore</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Bootstrap Icons (for Cart icon) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+   
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+          <!-- Left-aligned items -->
+          <a class="navbar-brand" href="#">Bookstore</a>
+          <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Categories
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                          <li><a class="dropdown-item" href="#fictionBooks">Fiction</a></li>
+                          <li><a class="dropdown-item" href="#nonFictionBooks">Non-Fiction</a></li>
+                          <li><a class="dropdown-item" href="#biography">Biography</a></li>
+                          <li><a class="dropdown-item" href="#poetry">Poetry</a></li>
+                          <li><a class="dropdown-item" href="#scienceTechnology">Science & Technology</a></li>
+                      </ul>
+                  </li>
+              </ul>
+              <!-- Right-aligned items -->
+              <form id="searchForm" class="d-flex ms-auto me-3">
+                  <input id="searchInput" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-light" type="submit">Search</button>
+              </form>
+              <ul class="navbar-nav mb-2 mb-lg-0">
+                  <li class="nav-item">
+                      <a class="nav-link" href="#contact">Contact</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#about">About</a>
+                  </li>
+                  <li class="nav-item ms-3">
+                      <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#cartModal">
+                        Cart  <i class="bi bi-cart"></i> <span id="cart-count">0</span>
+                      </a>
+                  </li>
+              </ul>
+          </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+      </div>
+  </nav>
+  
+    <!-- Fiction Books Section -->
+    <!-- <div class="container my-5"> -->
+      <div id="fictionBooks" class="container my-5">
+        <h2 class="text-center mb-4 fiction-title">Fiction Books</h2>
+
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            <!-- Card 1 -->
+            <div class="col">
+              <div class="card book-card h-100" data-title="Ram Chandra Series" data-description="LANKA WILL BURN. DARKNESS WILL PERISH. BUT CAN LIGHT ENDURE? INDIA, 3400 BCE. Greed. Rage. Grief. Love. Smouldering tinder, waiting to trigger a war. But this war is different. This one is for Dharma. This war is for the greatest Goddess of them all. Sita has been kidnapped. Defiantly, she dares Raavan to kill her - she'd rather die than allow Ram to surrender. Ram is beside himself with grief and rage. He prepares for war. Fury is his fuel. Calm focus, his guide.">
+                  <img src="./images/ramSeries.jpg" class="card-img-top ram" alt="Book 1">
+                  <div class="card-body">
+                      <h5 class="card-title">Ram Chandra Series</h5>
+                      <p class="card-text">Publication: Penguin Random House</p>
+                      <p class="card-text">Author:Amish Rajan</p>
+                      <p class="card-text">Price: &#8377;1001</p>
+                      <button class="btn btn-primary add-to-cart mybtn" data-title="Ram Chandra Series" data-price="1001">Add to Cart</button>
+                  </div>
+              </div>
+          </div>
+
+          <div class="col">
+            <div class="card book-card h-100" data-title="War Of Lanka" data-description="Rama is a noble man, miserable after the abduction of his wife, fighting a war to bring back his soul-mate, as well as aspiring to live up to his ideals in this battle for dharma. On the other hand, Ravana, slave of his ego thought he was invincible. Activated by greed, rage, grief, love, the actors of Ramayana assume the commonness of an average human.
+            A story of war implies the predominance of heroes versus anti-heroes, there is an assortment of worthy warriors and noble soldiers here. ">
+                <img src="./images/lanka_war.jpg" class="card-img-top lanka" alt="Book 1">
+                <div class="card-body ">
+                    <h5 class="card-title">War Of Lanka</h5>
+                    <p class="card-text">Publication: HarperCollins India (3 October 2022); HarperCollins</p>
+                    <p class="card-text">Author: Mister India</p>
+                    <p class="card-text">Price: &#8377;1001</p>
+                    <button class="btn btn-primary add-to-cart" data-title="War Of Lanka" data-price="2101">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+          <div class="card book-card h-100" data-title="The Silent Patient" data-description="The Silent Patient is a shocking psychological thriller of a woman’s act of violence against her husband—and of the therapist obsessed with uncovering her motive.">
+              <img src="./images/the_sielent_patient.jpg" class="card-img-top silent" alt="Book 1">
+              <div class="card-body ">
+                  <h5 class="card-title">The Silent Patient</h5>
+                  <p class="card-text">Publication:  Orion; latest edition (15 July 2019)</p>
+                  <p class="card-text">Author: Alex Michaelides</p>
+                  <p class="card-text">Price: &#8377;269</p>
+                  <button class="btn btn-primary add-to-cart" data-title="Book Title 1" data-price="15">Add to Cart</button>
+              </div>
+          </div>
+      </div>
+      <div class="col">
+        <div class="card book-card h-100" data-title="A Man Called Ove" data-description="The story follows a miserable, grumpy, but weirdly loveable elderly man living alone on a suburban street who shouts, swears, and fights his way through life. Bitter (and still grieving) over the loss of his wife and mad at the world, Ove strikes up an unexpected friendship with a young family who moves in next door.">
+            <img src="./images/owe.jpg" class="card-img-top man" alt="Book 1">
+            <div class="card-body ">
+                <h5 class="card-title">Book Title 1</h5>
+                <p class="card-text">Publication: Sceptre; 2022nd edition (7 May 2015)</p>
+                <p class="card-text">Author: Fredrik Backman</p>
+                <p class="card-text">Price: &#8377;258</p>
+                <button class="btn btn-primary add-to-cart" data-title="Book Title 1" data-price="15">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+
+
+            
+        </div>
+      
+        </div>
+
+
+
+    <!-- Non-Fiction Books Section -->
+    <!-- <div class="container my-5"> -->
+      <div id="nonFictionBooks" class="container my-5">
+        <h2 class="text-center mb-4 fiction-title">Non-Fiction Books</h2>
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            <!-- Card 1 -->
+            <div class="col">
+                <div class="card book-card h-100" data-title="The Diary of A Young Girl" data-description=" The Diary of A Young Girl deserves a read by everyone who has ever questioned mental strength of humans and also by those who cannot come to terms with the cruelties that could be inflicted by humans upon fellow humans. The Underlying Themes Anne Frank and her family lived a peaceful life in Frankfurt, Germany but they had to escape to Amsterdam with fellow Jews and go into hiding, as the Nazis took over Europe. ">
+                    <img src="./images/the_diaryOfGirl.jpg" class="card-img-top diary" alt="Non-Fiction Book 1">
+                    <div class="card-body ">
+                        <h5 class="card-title">The Diary of A Young Girl</h5>
+                        <p class="card-text">Publication:  Fingerprint! Publishing</p>
+                        <p class="card-text">Author: Anne Frank</p>
+                        <p class="card-text">Price: &#8377;139</p>
+                        <button class="btn btn-primary add-to-cart" data-title="Non-Fiction Book Title 1" data-price="25">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col">
+                <div class="card book-card h-100" data-title="Who Will Cry When You Die? " data-description="this book will be the guiding light that leads you to a brilliant new way of living. In this easy-to-read yet wisdom-rich manual, the author offers 101 simple solutions to life’s most complex problems, ranging from a little-known method for beating stress and worry to a powerful way to enjoy the journey while you create a legacy that lasts. “When You Were Born, You Cried While The World Rejoiced. Live Your Life In Such A Way That When You Die, The World Cries While You Rejoice.” Ancient Sanskrit Saying">
+                    <img src="./images/for_whom.jpg" class="card-img-top who" alt="Non-Fiction Book 2">
+                    <div class="card-body ">
+                        <h5 class="card-title">Who Will Cry When You Die? </h5>
+                        <p class="card-text">Publication:  Jaico Publishing House; First Edition (15 June 2006)</p>
+                        <p class="card-text">Author: Robbin Sharma Frank</p>
+                        <p class="card-text">Price: &#8377;30</p>
+                        <button class="btn btn-primary add-to-cart" data-title="Non-Fiction Book Title 2" data-price="30">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+              <div class="card book-card h-100" data-title="Think Straight" data-description="THINK STRAIGHT reveals the recipe for taking control of your mind so you can improve your life, career, relationships, business. I wrote this little book in a way that you can read it more than once. And I hope that this book serves as an anchor to you--especially during trying times. The mind is the most powerful tool on earth. Change the way you think. And you'll change your life.">
+                  <img src="./images/think_straight.jpg" class="card-img-top think1" alt="Non-Fiction Book 2">
+                  <div class="card-body think">
+                      <h5 class="card-title">TThink Straight</h5>
+                      <p class="card-text">Publication:  Penguin; 1st edition (1 January 2020); </p>
+                      <p class="card-text">Author: Darious Foroux </p>
+                      <p class="card-text">Price: &#8377;145</p>
+                      <button class="btn btn-primary add-to-cart" data-title="Non-Fiction Book Title 2" data-price="30">Add to Cart</button>
+                  </div>
+              </div>
+          </div>
+
+          <div class="col">
+            <div class="card book-card h-100" data-title="The Mountain Is You" data-description="This is a book about self-sabotage. Why we do it, when we do it, and how to stop doing it—for good. Coexisting but conflicting needs create self-sabotaging behaviors. This is why we resist efforts to change, often until they feel completely futile. But by extracting crucial insight from our most damaging habits, building emotional intelligence by better understanding our brains and bodies, releasing past experiences at a cellular level, ">
+                <img src="./images/the_mountain.jpg" class="card-img-top" alt="Non-Fiction Book 2">
+                <div class="card-body mountain">
+                    <h5 class="card-title">The Mountain Is You</h5>
+                    <p class="card-text">Publication: Amaryllis (An Imprint of Manjul Publishing House); First Edition (25 November 2023);</p>
+                    <p class="card-text">Author:Brianna Wiest</p>
+                    <p class="card-text">Price: &#8377;278</p>
+                    <button class="btn btn-primary add-to-cart" data-title="Non-Fiction Book Title 2" data-price="30">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+            <!-- More Cards... -->
+        </div>
+    </div>     
+
+
+   
+
+
+
+
+
+
+<!-- Biography section -->
+    <!-- <div class="container my-5"> -->
+      <div id="biography" class="container my-5">
+        <h2 class="text-center mb-4 fiction-title">Biography Books</h2>
+
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            <!-- Card 1 -->
+            <div class="col">
+              <div class="card book-card h-100" data-title="My Inventions, Autobiography of Nikola Tesla" data-description="Nikola Tesla's personal account of his life, inventions, and discoveries
+              Provides insights into the mind of a scientific genius and his revolutionary ideas
+              Chronicles Tesla's groundbreaking contributions to electrical engineering and technology
+              Reveals Tesla's fascinating vision for wireless power transmission and other groundbreaking concepts
+              A captivating and inspiring read for science enthusiasts, inventors, and admirers of Nikola Tesla's genius">
+                  <img src="./images/nikola_tesla.jpg" class="card-img-top nikola" alt="Book 1">
+                  <div class="card-body">
+                      <h5 class="card-title">My Inventions, Autobiography of Nikola Tesla</h5>
+                      <p class="card-text">Publication:Fingerprint! Publishing (1 February 2021)</p>
+                      <p class="card-text">Author: Nikola Tesla</p>
+                      <p class="card-text">Price: &#8377;139</p>
+                      <button class="btn btn-primary add-to-cart" data-title="Book Title 1" data-price="15">Add to Cart</button>
+                  </div>
+              </div>
+          </div>
+
+          <div class="col">
+            <div class="card book-card h-100" data-title="AN AUTOBIOGRAPHY OR THE STORY OF MY EXPERIMENTS WITH TRUTH" data-description="Mohandas Karamchand Gandhi recounts the story of his life, entwining memories of his childhood, marriage, experiences in South Africa and later with the freedom movement, with his constant struggle to attain absolute truth and his quest to be one with god.Narrated in Gandhi's simplistic prose, An Autobiography is a glimpse into the life and mind of the man who would lead his country to freedom and be hailed as the greatest figure of the twentieth century.">
+                <img src="./images/mk_gandhi.jpg" class="card-img-top mg" alt="Book 1">
+                <div class="card-body">
+                    <h5 class="card-title">Book Title 1</h5>
+                    <p class="card-text">Publication: Rupa (1 January 2011); Rupa Publications India</p>
+                    <p class="card-text">Author: M.K.Gandhi</p>
+                    <p class="card-text">Price: &#8377;160</p>
+                    <button class="btn btn-primary add-to-cart" data-title="AN AUTOBIOGRAPHY OR THE STORY OF MY EXPERIMENTS WITH TRUTH" data-price="160">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col">
+          <div class="card book-card h-100" data-title="The TATAS" data-description=" a Parsi family with humble roots was doing the same in India. In 1822, a boy was born in a priestly household in Gujarat's Navsari. Young Nusserwanji knew early on that his destiny lay beyond his village and decided to head for Bombay to start a business. What Nusserwanji started as a cotton trading venture, his son Jamsetji, born in the same year as Rockefeller, grew into a multifaceted business, turning around sick textile mills, setting up an iron and steel company, envisioning a cutting-edge institute of higher learning, building a world-class hotel.">
+              <img src="./images/tatas.jpg" class="card-img-top tata" alt="Book 1">
+              <div class="card-body">
+                  <h5 class="card-title">Book Title 1</h5>
+                  <p class="card-text">Publication: HarperBusiness; 1st edition (10 September 2020)</p>
+                  <p class="card-text">Author: Girish Kuber</p>
+                  <p class="card-text">Price: &#8377;314</p>
+                  <button class="btn btn-primary add-to-cart" data-title="The TATAS" data-price="314">Add to Cart</button>
+              </div>
+          </div>
+      </div>
+
+
+      <div class="col">
+        <div class="card book-card h-100" data-title="STEVE JOBS (PB): THE EXCLUSIVE BIOGRAPHY" data-description="Walter Isaacson tells the story of the rollercoaster life and searingly intense personality of creative entrepreneur whose passion for perfection and ferocious drive revolutionized six industries: personal computers, animated movies,music, phones, tablet computing, and digital publishing.He encouraged the people he knew to speak honestly. And Jobs speaks candidly, sometimes brutally so, about the people he worked with and competed against. His friends, foes, and colleagues provide an unvarnished view of the passions, perfectionism, obsessions, artistry, devilry, and compulsion for control that shaped his approach to business and the innovative products that resulted.">
+            <img src="./images/steve_jobs.jpg" class="card-img-top steve" alt="Book 1">
+            <div class="card-body">
+                <h5 class="card-title">STEVE JOBS (PB): THE EXCLUSIVE BIOGRAPHY</h5>
+                <p class="card-text">Publication: Abacus; 2015th edition (11 February 2015)</p>
+                <p class="card-text">Author: Walter Isaacson </p>
+                <p class="card-text">Price: &#8377;585</p>
+                <button class="btn btn-primary add-to-cart" data-title="STEVE JOBS (PB): THE EXCLUSIVE BIOGRAPHY">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+
+        </div>
+      </div>
+
+
+
+
+
+
+<!-- Poetry Section -->
+<div id="poetry" class="container my-5">
+  <h2 class="text-center mb-4 fiction-title">Poetry Books</h2>
+ 
+  <div class="row row-cols-1 row-cols-md-4 g-4">
+    <!-- Card 1 -->
+    <div class="col">
+      <div class="card book-card h-100" data-title="I Don't Love You Anymore" data-description="This book was meant to find you if you’ve ever loved someone who didn’t love you back, if you’ve ever over-invested in the wrong people or if you have a hard time letting go.
+
+      I Don’t Love You Anymore is a book that’ll feel like home to you. I promise it’ll hold you gently on your worst days.">
+          <img src="./images/i_dont_love.jpg" class="card-img-top dontyou" alt="Book 1">
+          <div class="card-body">
+              <h5 class="card-title">I Don't Love You Anymore</h5>
+              <p class="card-text">Publication: Ebury Press (14 May 2024); Penguin Random House India</p>
+              <p class="card-text">Author: Rithvik Singh Rathore</p>
+              <p class="card-text">Price: &#8377;237</p>
+              <button class="btn btn-primary add-to-cart" data-title="I Don't Love You Anymore" data-price="237">Add to Cart</button>
+          </div>
+      </div>
+  </div>
+
+  <div class="col">
+    <div class="card book-card h-100" data-title="Rumi's Little Book of Life" data-description="This collection of mystical poetry focuses on one of life?s core issues: coming to grips with the inner life. During the course of life, each of us is engaged on an inner journey. Rumi?s little Book of life is a guidebook for that journey. The poetry is a companion for those who consciously enter the inner world to explore the gardens within-out of the everyday ?world of dust?-through an ascending hierarchy that restores one?s soul to the heart; the heart of the spirit; and in finding spirit, transcends all. ">
+        <img src="./images/rumis.jpg" class="card-img-top rumi" alt="Book 1">
+        <div class="card-body">
+            <h5 class="card-title">Rumi's Little Book of Life</h5>
+            <p class="card-text">Publication: AMARYLLIS (1 January 2019)</p>
+            <p class="card-text">Author: Rumi</p>
+            <p class="card-text">Price: &#8377;274</p>
+            <button class="btn btn-primary add-to-cart" data-title="Rumi's Little Book of Life" data-price="274">Add to Cart</button>
+        </div>
+    </div>
+</div>
+
+
+<div class="col">
+  <div class="card book-card h-100" data-title="Gitanjali" data-description=" An integration of two words, 'Git' and 'Anjali,' meaning song and offering respectively, the literal meaning of the word is 'offering of songs.' and because of the strong devotional tone and subliminal spiritual incitation, the book can be said to have devotion to god as its theme. It highlights the poet's intense response to the magnificence of the universe or rather an affirmation of life with all its abundance, mystery and diversity. ">
+      <img src="./images/gitanjali.jpg" class="card-img-top gita" alt="Book 1">
+      <div class="card-body">
+          <h5 class="card-title">Gitanjali</h5>
+          <p class="card-text">Publication:Rupa (1 February 2002)</p>
+          <p class="card-text">Author: Rabindranath Tagore </p>
+          <p class="card-text">Price: &#8377;90</p>
+          <button class="btn btn-primary add-to-cart" data-title="Gitanjali" data-price="90">Add to Cart</button>
+      </div>
+  </div>
+</div>
+
+
+<div class="col">
+  <div class="card book-card h-100" data-title="Selected Poems By Gulzar" data-description="Selected Poems: Gulzar contains a collection of Gulzars epic works.
+  The poems have been translated by Pavan Varma, and he has managed to retain the original expressiveness of Gulzars poems.">
+      <img src="./images/gulzar.jpg" class="card-img-top gulzar" alt="Book 1">
+      <div class="card-body">
+          <h5 class="card-title">Selected Poems By Gulzar</h5>
+          <p class="card-text">Publication: PENGUIN INDIA; Latest edition (1 January 2012)</p>
+          <p class="card-text">Author:Gulzar</p>
+          <p class="card-text">Price: &#8377;143</p>
+          <button class="btn btn-primary add-to-cart" data-title="Selected Poems By Gulzar" data-price="">Add to Cart</button>
+      </div>
+  </div>
+</div>
+
+
+</div>
+</div>
+
+<!-- Science & Technology Section -->
+<div id="scienceTechnology" class="container my-5">
+  <h2 class="text-center mb-4 fiction-title ">Science & Technology Books</h2>
+ 
+  <div class="row row-cols-1 row-cols-md-4 g-4">
+    <!-- Card 1 -->
+    <div class="col">
+      <div class="card book-card h-100" data-title="Future Science & Technology" data-description="What is nanotechnology? What is intelligence? How do robots work? This encyclopedia will answer these and more whats and hows for you. Learning is made simpler with well-labelled diagrams, and an extensive glossary of difficult words. Bonus: the book comes loaded with Isn’ t It Amazing — a section of fun facts to keep you glued for more">
+          <img src="./images/science1.jpg" class="card-img-top science" alt="Book 1">
+          <div class="card-body">
+              <h5 class="card-title">Future Science & Technology</h5>
+              <p class="card-text">Publication: Wonder House Books (8 December 2021); </p>
+              <p class="card-text">Author: Wonder House Books</p>
+              <p class="card-text">Price: &#8377;159</p>
+              <button class="btn btn-primary add-to-cart" data-title="Future Science & Technology" data-price="159">Add to Cart</button>
+          </div>
+      </div>
+
+      
+  </div>
+
+  <div class="col">
+    <div class="card book-card h-100" data-title="Science Knowledge Encyclopedia for Children" data-description="What is the Theory of Evolution? How do chemical reactions occur? Why is the human eye most receptive to only three colors? Get ready to explore the fascinating world of science in this boxed set of six encyclopedias. Well-labelled diagrams, and an extensive glossary of difficult words come as happy bonuses in these informative books.">
+        <img src="./images/science2.jpg" class="card-img-top science" alt="Book 1">
+        <div class="card-body">
+            <h5 class="card-title">Science Knowledge Encyclopedia for Children [Set of 6 Books]</h5>
+            <p class="card-text">Publication: Wonder House Books (8 December 2021)</p>
+            <p class="card-text">Author: Wonder House Books</p>
+            <p class="card-text">Price: &#8377;719</p>
+            <button class="btn btn-primary add-to-cart" data-title="Science Knowledge Encyclopedia for Children [Set of 6 Books]" data-price="719">Add to Cart</button>
+        </div>
+    </div>
+
+    
+</div>
+
+<div class="col">
+  <div class="card book-card h-100" data-title="The Future Is Faster Than You Think" data-description="In their book Abundance, bestselling authors and futurists Peter Diamandis and Steven Kotler tackled grand global challenges, such as poverty, hunger, and energy. Then, in Bold, they chronicled the use of exponential technologies that allowed the emergence of powerful new entrepreneurs. Now the bestselling authors are back with The Future Is Faster Than You Think, a blueprint for how our world will change in response to the next ten years of rapid technological disruption.">
+      <img src="./images/future_fast.jpg" class="card-img-top science" alt="Book 1">
+      <div class="card-body">
+          <h5 class="card-title">The Future Is Faster Than You Think</h5>
+          <p class="card-text">Publication:  Simon & Schuster (28 January 2020)</p>
+          <p class="card-text">Author:Peter H. Diamandis </p>
+          <p class="card-text">Price: &#8377;408</p>
+          <button class="btn btn-primary add-to-cart" data-title="The Future Is Faster Than You Think" data-price="408">Add to Cart</button>
+      </div>
+  </div>
+
+  
+</div>
+
+<div class="col">
+  <div class="card book-card h-100" data-title="Information Technology and digital banking" data-description="Technology has brought about a paradigm shift in banking operations. Customers now-a-days do not bank with a branch but with a bank. Bankers, therefore, need to know about both hardware and software applications. Towards this end, the book on “Information Technology & Digital Banking”, not only walks the readers through various aspects related to IT Security and Applications but also details the aspects related to Digital Banking and Emerging Technologies. This book is the courseware for the CAIIB elective subject on “Information Technology & Digital Banking”.">
+      <img src="./images/banking_tech.jpg" class="card-img-top science" alt="Book 1">
+      <div class="card-body">
+          <h5 class="card-title">Information Technology and digital banking</h5>
+          <p class="card-text">Publication: Macmillan; First Edition (17 January 2023)</p>
+          <p class="card-text">Author: Indian Institute of Banking & Finance</p>
+          <p class="card-text">Price: &#8377;616</p>
+          <button class="btn btn-primary add-to-cart" data-title="Information Technology and digital banking" data-price="616">Add to Cart</button>
+      </div>
+  </div>
+
+  
+</div>
+  
+
+</div>
+</div>
+
+
+     <!-- Book Details Modal -->
+     <div class="modal fade" id="bookDetailsModal" tabindex="-1" aria-labelledby="bookDetailsModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg ">
+          <div class="modal-content description-model">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="bookDetailsModalLabel">Book Title</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <p id="book-description">Book description goes here.</p>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+            
+
+    <!-- Cart Modal -->
+<div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+      <div class="modal-content cartstyle">
+          <div class="modal-header">
+              <h5 class="modal-title" id="cartModalLabel">Your Cart</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <!-- Cart Items will be displayed here dynamically -->
+              <div id="cart-items"></div>
+              <hr>
+              <!-- Total Price -->
+              <h5>Total: &#8377;<span id="total-price">0</span></h5>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button id="checkout-button" type="button" class="btn btn-primary">Checkout</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+  
+
+
+
+
+
+
+
+
+<!-- Footer -->
+<footer class="foot text-white mt-5 py-4">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-4 mb-3">
+              <h5 class="text-uppercase">About Us</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
+          </div>
+          <div class="col-md-4 mb-3">
+              <h5 class="text-uppercase">Quick Links</h5>
+              <ul class="list-unstyled">
+                  <li><a href="#" class="text-white text-decoration-none">Home</a></li>
+                  <li><a href="#fictionBooks" class="text-white text-decoration-none">Fiction Books</a></li>
+                  <li><a href="#nonFictionBooks" class="text-white text-decoration-none">Non-Fiction Books</a></li>
+                  <li><a href="#biography" class="text-white text-decoration-none">Biography</a></li>
+                  <li><a href="#poetry" class="text-white text-decoration-none">Poetry</a></li>
+                  <li><a href="#scienceTechnology" class="text-white text-decoration-none">Science & Technology</a></li>
+              </ul>
+          </div>
+          <div class="col-md-4 mb-3">
+              <h5 class="text-uppercase">Contact Us</h5>
+              <p><i class="bi bi-envelope"></i> email@example.com</p>
+              <p><i class="bi bi-phone"></i> +123 456 7890</p>
+              <p><i class="bi bi-geo-alt"></i> 123 Book Street, Book City, BK 12345</p>
+          </div>
+      </div>
+      <div class="text-center mt-4">
+          <p class="mb-0">&copy; 2024 Online Bookstore. All rights reserved.</p>
+      </div>
+  </div>
+</footer>
+
+
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JavaScript -->
+    <script src="./script.js">
+   </script>
+
+    
+</body>
+</html>
