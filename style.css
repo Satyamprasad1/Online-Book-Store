@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+jjj{
+  
+
+}
+
+/* Custom Styles */
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: #f8f9fa;
+}
+
+.navbar {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+ 
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  font-size: 1.1rem;
+  margin-right: 20px;
+  color: #f8f9fa;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #FFD700;
+  transition: color 0.3s ease-in-out;
+}
+
+.dropdown-menu {
+  background-color: #343a40;
+  background-color: #973131;
+}
+
+.dropdown-menu .dropdown-item {
+  color: #f8f9fa;
+  color: #FFD700;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: transparent;
+  color: #F6E96B;
+}
+
+/* Adjust the search bar width */
+form.d-flex {
+  width: 50%;
+}
+
+
+    .navbar-nav .nav-link.active {
+        font-weight: bold;
+        color: #f0f0f0;
+        background-color: #343a40; /* Adjust the background color to match your theme */
+    }
+
+
+
+
+
+
+
+    /* css for section title */
+    .fiction-title {
+      /* border-radius: 2rem; */
+      background-color: #973131;
+      color: #FFD700;
+      padding: 0.5rem 0;
+      margin-top: 5rem !important;
+    }
+    
+    
+
+
+
+
+
+
+    /* footer */
+
+    /* Footer Styling */
+footer {
+  background-color: #343a40;
+  
+  color: #FFFFFF;
+}
+
+footer h5 {
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+footer p, footer a {
+  
+  color: #FFFFFF;
+}
+
+footer a:hover {
+  
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+footer .bi {
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+}
+
+
+
+/* customize image book */
+
+
+
+
+.who,.diary,.think1,.ram,.lanka,.silent,.man,.nikola,.mg,.tata,.steve,.dontyou,.gita,.gulzar,.rumi,.science{
+  height: 90%;
+  
+}
+.navbar,.foot{
+  background-color: #973131 !important;
+  color: white;
+}
+.card-body{
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color:#973131 ;
+
+}
+#fictionBooks,#nonFictionBooks,#biography,#poetry,#scienceTechnology{
+  background-color: #F6E96B !important;
+  font-family: "Mochiy Pop One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+body{
+ 
+  /* background-image: linear-gradient(45deg, #FAD961 0%, #F76B1C 100%); */
+  
+  background-color: #F76E1E;
+}
+
+
+
+/* cart style for modal */
+.cartstyle,.description-model{
+  background-color: #F6E96B;
+  color: #973131;
+}
+
